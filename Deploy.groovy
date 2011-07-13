@@ -48,11 +48,10 @@ Session.metaClass.exec = { cmd ->
             while (inp.available() > 0) {
                 int i = inp.read(tmp, 0, 1024)
                 if (i < 0) {
-                    break;
+                    break
                 }
                 String s = new String(tmp, 0, i)
                 output.append(s)
-                //System.out.print(s)
             }
             if (channel.closed) {
                 exitStatus = channel.exitStatus
